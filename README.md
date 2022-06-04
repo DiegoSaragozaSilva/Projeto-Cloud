@@ -15,4 +15,4 @@ Ansible foi usado para que o deployment fosse feito no cluster EKS gerado pelo T
 - Da maneira com que o cluster está configurado o metrics-server não conseguirá fornecer as informações necessárias dos pods ao horizontal pod autoscaler. É necessário que os security groups do cluster e dos nodes liberem acesso de entrada e saida de todos os protocolos a partir de seu ip. Além disso, é necessário alterar o deployment do metrics-server, adicionando `hostNetwork: true` dentro de `spec` e `--kubelet-insecure-tls` ao argumentos do deployment. Estes problemas são nativos do metrics-server quando se trabalha usando EKS, por isso, minha infraestrutura e meu deployment não levam em conta as correções. 
 
 ## Infraestrutura
-![[infra.png]]
+![image info](./infra.png)
