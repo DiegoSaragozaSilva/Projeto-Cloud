@@ -1,0 +1,9 @@
+---
+
+- name: Deploy to EKS
+  hosts: localhost
+  tasks:
+  - name: Deploy Django pods
+    shell: kubectl apply -f pod.yml 
+  - name: Autoscaling deployment
+    shell: kubectl autoscale deployment django --cpu-percent=50 --min=1 --max=10
